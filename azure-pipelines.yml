@@ -38,3 +38,7 @@ steps:
     targetPath: '$(Pipeline.Workspace)'
     artifact: 'myApp'
     publishLocation: 'pipeline'
+- task: WhiteSource@21
+  inputs:
+    cwd: '$(System.DefaultWorkingDirectory)'
+    projectName: 'WiredBrain'
