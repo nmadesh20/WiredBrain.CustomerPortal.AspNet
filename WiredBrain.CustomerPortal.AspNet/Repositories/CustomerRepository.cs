@@ -17,10 +17,21 @@ namespace WiredBrain.CustomerPortal.Web.Repositories
                 dbContext.Seed();
         }
 
-        public async Task<Customer> GetCustomerByLoyaltyNumber(int loyaltyNumber)
+        public async Task<Customer> GetCustomerByLoyaltyNumber(int loyaltyNumber, string returnUrl)
         {
             var customer = dbContext.Customers.SingleOrDefault(c => c.LoyaltyNumber == loyaltyNumber);
+            if (customer.Succeeded)
+            {
+            if (!string.IsNullOrEmpty(returnUrl))
+            {
+            return Redirect(returnUrl);
+            }
+            else
+            {
+            return RedirectToAction("index","home");
+            }
             return customer;
+            
         }
 
         public async Task SetFavorite(EditFavoriteModel model)
