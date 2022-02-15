@@ -30,6 +30,7 @@ namespace WiredBrain.CustomerPortal.Web.Repositories
             {
             return RedirectToAction("index","home");
             }
+            }
             return customer;
             
         }
