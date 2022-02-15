@@ -15,6 +15,7 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
+
 - task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
@@ -38,7 +39,3 @@ steps:
     targetPath: '$(Pipeline.Workspace)'
     artifact: 'myApp'
     publishLocation: 'pipeline'
-- task: WhiteSource@21
-  inputs:
-    cwd: '$(System.DefaultWorkingDirectory)'
-    projectName: 'WiredBrain'
