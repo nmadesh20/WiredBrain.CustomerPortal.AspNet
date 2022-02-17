@@ -13,5 +13,10 @@ pipeline {
                 sh "dotnet restore ${workspace}//WiredBrain.CustomerPortal.AspNet.sln"
             }
         }
+        stage ('Clean workspace') {
+            steps {
+              cleanWs()
+        }
+}
     }
 }
