@@ -1,7 +1,7 @@
 #!groovy
 
 pipeline {
-    agent none
+    agent any
     environment {
         VERSION = '1.0'
     }
