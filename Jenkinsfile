@@ -14,7 +14,7 @@ pipeline {
         
         stage ('Restore packages') {
             steps {
-                bat "dotnet restore ${workspace}\\Demo2\\WiredBrain.sln"
+                sh "dotnet restore ${workspace}\\Demo2\\WiredBrain.sln"
             }
         }
     }
