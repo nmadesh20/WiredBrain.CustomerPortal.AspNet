@@ -10,7 +10,7 @@ pipeline {
         
         stage ('Restore packages') {
             steps {
-                sh "dotnet restore ${workspace}\\WiredBrain.CustomerPortal.AspNet.sln"
+                sh "dotnet restore ${workspace}//WiredBrain.CustomerPortal.AspNet.sln"
             }
         }
     }
