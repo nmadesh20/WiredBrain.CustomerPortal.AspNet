@@ -11,6 +11,11 @@ pipeline {
                 cleanWs()
             }
         }
+        stage ('Checkout') {
+            steps{
+            checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[]]])
+            }
+        }
         
         stage ('Restore packages') {
             steps {
